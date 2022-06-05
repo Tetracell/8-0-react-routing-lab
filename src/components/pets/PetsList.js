@@ -4,8 +4,8 @@ import "./PetsList.css";
 //import { Routes, Route } from "react-router-dom";
 //import PageNotFound from "../common/PageNotFound";
 
-export const PetsList = ({ pets }) => {
-  const [cats, dogs] = pets.reduce(
+export const PetsList = ({ pets, allPets }) => {
+  const [cats, dogs] = allPets.reduce(
     (acc, pet) => {
       const position = pet.kind === "Cat" ? 0 : 1;
       acc[position].push(pet);
@@ -14,8 +14,6 @@ export const PetsList = ({ pets }) => {
     [[], []]
   );
 
-  console.log(cats)
-  console.log(dogs);
   return (
     <div>
       <section className="pets-wrapper">

@@ -47,16 +47,17 @@ class App extends React.Component {
             element={<StaffList employees={employees} />}
           />
           <Route exact path="/pets/" element={<PetsList pets={pets} />} />
-          <Route exact path="/pets/cats" element={<PetsList pets={pets}/>}/>
-          <Route exact path="/pets/dogs" element={<PetsList pets={pets}/>}/>
-          
-          {/* <Route
+          {/* <Route exact path="/pets/cats" element={<PetsList pets={pets}/>}/>
+          <Route exact path="/pets/dogs" element={<PetsList pets={pets}/>}/> */}
+
+          <Route
             path="/pets/cats"
             element={
               <PetsList
                 pets={pets.filter((pet) => {
                   return pet.kind === "Cat";
                 })}
+                allPets={pets}
               />
             }
           />
@@ -67,10 +68,11 @@ class App extends React.Component {
                 pets={pets.filter((pet) => {
                   return pet.kind === "Dog";
                 })}
+                allPets={pets}
               />
             }
-          /> */}
-          <Route path="*" element={<PageNotFound/>}/>
+          />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
       </div>
