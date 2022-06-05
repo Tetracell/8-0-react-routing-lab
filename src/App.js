@@ -47,7 +47,10 @@ class App extends React.Component {
             element={<StaffList employees={employees} />}
           />
           <Route exact path="/pets/" element={<PetsList pets={pets} />} />
-          <Route
+          <Route exact path="/pets/cats" element={<PetsList pets={pets}/>}/>
+          <Route exact path="/pets/dogs" element={<PetsList pets={pets}/>}/>
+          
+          {/* <Route
             path="/pets/cats"
             element={
               <PetsList
@@ -66,7 +69,8 @@ class App extends React.Component {
                 })}
               />
             }
-          />
+          /> */}
+          <Route path="*" element={<PageNotFound/>}/>
         </Routes>
         <Footer />
       </div>

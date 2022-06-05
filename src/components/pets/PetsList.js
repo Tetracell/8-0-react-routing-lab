@@ -14,13 +14,14 @@ export const PetsList = ({ pets }) => {
     [[], []]
   );
 
+  console.log(cats)
+  console.log(dogs);
   return (
     <div>
       <section className="pets-wrapper">
         <PetsListNav cats={cats} dogs={dogs} />
         <section className="pets-list">
          {pets.map((pet) => {
-           console.log(pet.kind);
            return (
            <Pet key={pet.id} kind={pet.kind} pet={pet} />
            )
