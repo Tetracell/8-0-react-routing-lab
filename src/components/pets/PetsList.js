@@ -5,7 +5,7 @@ import "./PetsList.css";
 //import PageNotFound from "../common/PageNotFound";
 
 export const PetsList = ({ pets, allPets }) => {
-  const [cats, dogs] = allPets.reduce(
+  const [cats, dogs] = pets.reduce(
     (acc, pet) => {
       const position = pet.kind === "Cat" ? 0 : 1;
       acc[position].push(pet);
