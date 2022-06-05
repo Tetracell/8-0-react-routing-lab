@@ -41,9 +41,32 @@ class App extends React.Component {
             path="/"
             element={<Home employees={employees} owners={owners} pets={pets} />}
           />
-          <Route path="/staff" element={<StaffList employees={employees} />} />
-          <Route exact path="/pets/*" element={<PetsList pets={pets} />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route
+            exact
+            path="/staff"
+            element={<StaffList employees={employees} />}
+          />
+          <Route exact path="/pets/" element={<PetsList pets={pets} />} />
+          <Route
+            path="/pets/cats"
+            element={
+              <PetsList
+                pets={pets.filter((pet) => {
+                  return pet.kind === "Cat";
+                })}
+              />
+            }
+          />
+          <Route
+            path="/pets/dogs"
+            element={
+              <PetsList
+                pets={pets.filter((pet) => {
+                  return pet.kind === "Dog";
+                })}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </div>
